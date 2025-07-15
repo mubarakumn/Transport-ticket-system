@@ -73,20 +73,19 @@ if(isset($_SESSION['login_id']) && isset($_GET['bid'])){
     			end_load()
     			alert_toast('An error occured','danger');
 			},
-			success:function(resp){
-				resp = JSON.parse(resp)
-				if(resp.status == 1){
-    				end_load()
-    				$('.modal').modal('hide')
-    				alert_toast('Data successfully saved','success');
-    				if('<?php echo !isset($_SESSION['login_id']) ?>' == 1){
-    				$('#book_modal .modal-body').html('<div class="text-center"><p>Your seat reservation has been made. Thank You. <br><strong><h3>'+resp.ref+'</h3></strong></p><small>Reference Number</small><br/><small>Copy or Capture your Reference number </small></div>')
-    				$('#book_modal').modal('show')
-    				}else{
-    					load_booked();
-    				}
-				}
+			success: function(resp){
+			resp = JSON.parse(resp);
+			if(resp.status == 1){
+				end_load();
+				$('.modal').modal('hide');
+
+				// Trigger payment modal
+				setTimeout(() => {
+				uni_modal("Complete Payment", "pay_modal.php?booking_id=" + resp.booking_id);
+				}, 500);
 			}
+			}
+
 		})
 	})
 	$('.datetimepicker').datetimepicker({

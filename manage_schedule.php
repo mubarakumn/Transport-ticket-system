@@ -59,7 +59,7 @@ $location = $conn->query("SELECT id,Concat(terminal_name,', ',city,', ',state) a
 				<input type="number" maxlength="4" class="form-control text-right" id="availability" name="availability" value="<?php echo isset($meta['availability']) ? $meta['availability'] : '' ?>">
 			</div>
 			<div class="form-group mb-2">
-				<label for="price" class="control-label">Price($)</label>
+				<label for="price" class="control-label">Price(<?php echo "&#8358;"?>)</label>
 				<input type="number" maxlength="20" class="form-control text-right" id="price" name="price" value="<?php echo isset($meta['price']) ? $meta['price'] : '' ?>">
 			</div>
 		</div>

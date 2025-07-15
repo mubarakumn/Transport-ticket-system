@@ -72,7 +72,7 @@
 									tr.append('<td class="">'+resp[k].ref_no+'</td>')
 									tr.append('<td class="">'+resp[k].name+'</td>')
 									tr.append('<td class="">'+resp[k].qty+'</td>')
-									tr.append('<td class="">$'+resp[k].amount+'</td>')
+									tr.append('<td class="">'+ "&#8358;" +resp[k].amount+'</td>')
 									tr.append('<td class="">'+(resp[k].status == 1 ? 'Paid' :'Unpaid')+'</td>')
 									
 										tr.append('<td><center><button class="btn btn-sm btn-info mr-2 text-white edit_booked" data-id="'+resp[k].schedule_id+'" data-bid="'+resp[k].id+'">Edit</button></center></td>')

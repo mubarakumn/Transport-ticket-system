@@ -84,7 +84,7 @@
 									tr.append('<td>'+resp[k].time+'</td>')
 									tr.append('<td>'+resp[k].eta+'</td>')
 									tr.append('<td>'+resp[k].availability+'</td>')
-									tr.append('<td>$'+resp[k].price+'</td>')
+									tr.append('<td>'+ "&#8358;" + resp[k].price+'</td>')
 									
 										tr.append('<td><center><button class="btn btn-sm btn-primary mr-2 text-white book_now" data-id="'+resp[k].id+'"><strong>Reserve</strong></button></center></td>')
 									$('#schedule-field tbody').append(tr)
