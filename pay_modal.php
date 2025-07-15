@@ -12,7 +12,7 @@ if (!$qry || $qry->num_rows == 0) {
 }
 
 $book = $qry->fetch_assoc();
-$email = 'test@example.com'; // Replace with real user email if available
+$email = 'transportSystem@example.com'; 
 $amount = $book['amount'] * 100; // Kobo
 ?>
 
@@ -24,7 +24,6 @@ $amount = $book['amount'] * 100; // Kobo
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <script>
     function payNow() {
-        $paystackPublicKey = "pk_test_0cbff431d626142b409c5602cfc51e2c19d90e40";
 
         var handler = PaystackPop.setup({
             key: "pk_test_0cbff431d626142b409c5602cfc51e2c19d90e40",
